@@ -2,7 +2,7 @@ const apiKey = "filler";
 const paid_key = "filler";
 const units = "imperial";
 
-// Main Function - Jimin
+// Main Function
 document.querySelector('.search-box button').addEventListener("click", () => {
     const cityName = document.getElementById("search-inputbox").value;
     
@@ -33,7 +33,7 @@ document.querySelector('.search-box button').addEventListener("click", () => {
 });
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper This function updates the weather image by calling & fetching the api, display image and catches errors - Jimin
+// Helper This function updates the weather image by calling & fetching the api, display image and catches errors
 function updateWeatherImage(lat, lon) {
     const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
     fetch(currentweatherdataApi)
@@ -55,7 +55,7 @@ function updateWeatherImage(lat, lon) {
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper Current Weather Image Function (Uses switch case with api response data given) - Jimin
+// Helper Current Weather Image Function (Uses switch case with api response data given)
 function getWeatherImage(condition) {
     let imageWeather;
 
@@ -81,7 +81,7 @@ function getWeatherImage(condition) {
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper This function updates the weather details by calling & fetching the api, display the content and catches errors - Jimin
+// Helper This function updates the weather details by calling & fetching the api, display the content and catches errors
 function updateWeatherDetails(lat, lon) {
     const currentweatherdataApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
@@ -107,7 +107,7 @@ function updateWeatherDetails(lat, lon) {
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-// function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections - Jason
+// function uses lat and lon to fetch data from api for hourly weather data, uses helper functions to update hourly and daily innter text sections
 function hourlyAndDaily(lat, lon) {
     const currentweatherdataApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${paid_key}`
     fetch(currentweatherdataApi)
@@ -135,7 +135,7 @@ function hourlyAndDaily(lat, lon) {
     }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location - Jason
+// Helper function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
 function hourlyText(arr) {
     for (let i=1; i<13; i++) {
         // hourly weather data being displayed
@@ -155,7 +155,7 @@ function hourlyText(arr) {
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location - Jason
+// Helper function uses openweathermap's One Call 3.0 API json array to update inner text of hourly section to display weather data of searched location
 function dailyText(arr) {
     for (let i=1; i<8; i++) {
         // daily weather data being displayed
@@ -186,7 +186,7 @@ function dailyText(arr) {
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper function to convert unix timestamp to a String representing day of the week - Jason
+// Helper function to convert unix timestamp to a String representing day of the week
 function unixToDay(num) {
     const date = new Date(num*1000);
     const weekday = date.toLocaleDateString('en-US', {weekday: 'long'});
@@ -194,7 +194,7 @@ function unixToDay(num) {
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Helper function to convert unix timestamp to a String representing the hour - Jason
+// Helper function to convert unix timestamp to a String representing the hour
 function unixToHour(num) {
     const date = new Date(num*1000);
     let time = date.getHours();
@@ -215,7 +215,7 @@ function unixToHour(num) {
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// function handles displays of weather alerts in the HTML - Destin
+// function handles displays of weather alerts in the HTML
 function displayAlerts(alert) {
     const alertsContainer = document.querySelector('.weather-alerts-container');
     
